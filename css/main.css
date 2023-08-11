@@ -1,0 +1,137 @@
+:root{
+    --mainBgColor: #1E202B;
+    --secBgColor: #2D303D;
+    --terBgColor: #323544; /*lighter*/
+    --signColor: #029DD9;
+    --mainTextColor: white;
+    --secTextColor: #8D8E93;
+    --facebook-blue: #1877f2;
+    --twitter-blue: #1da1f2;
+    --linkedIn-blue:#0a66c2;
+    --google-red:#ea4335;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--mainBgColor);
+}
+.signature{
+    background-color: var(--signColor);
+}
+/* navbar */
+.navbar{
+    color: var(--mainTextColor);
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler{
+    background-color: var(--signColor);
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+.navbar-nav .nav-link{
+    text-align: center;
+    width: 150px;
+    color: var(--mainTextColor);
+    padding-inline: 10px;
+    border: transparent 1px solid;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.navbar-nav .nav-link:hover{
+    color: var(--signColor);
+    border: 1px solid var(--signColor);
+}
+.navbar-nav .nav-link.active{
+    color: var(--signColor);
+    border: 1px solid var(--signColor);
+}
+/* home */
+.home{
+    background-image: url(../weatherIMGS/banner.png);
+    background-size: 100% 350px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.input-group{
+    margin: 10px 0;
+    padding: 5px;
+}
+.input-group input{
+    background-color: var(--mainBgColor);
+    box-shadow: none;
+    color: var(--mainTextColor);
+    padding: 10px;
+    width: 50%;
+}
+.input-group input:focus{
+    background-color: var(--mainBgColor);
+    box-shadow: none;
+    color: var(--mainTextColor);
+}
+.input-group input::placeholder{
+    color: rgba(255, 255, 255, 0.485);
+}
+.input-group button{
+    position: absolute;
+    z-index: 99;
+}
+.home .card .card-header{
+    background-color: var(--mainBgColor);
+}
+.home .card .list-group-item{
+    background-color: var(--secBgColor);
+    color: var(--mainTextColor);
+}
+.home .card{
+    height: 300px;
+    background-color: var(--secBgColor);
+}
+.home .card .content h1{
+    font-size: 65px;
+}
+.home .card .weather-icons li img{
+    width: 25px;
+    margin-right: 10px;
+}
+/* footer */
+footer{
+    background-color: var(--terBgColor);
+}
+footer .social-footer li i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+footer .social-footer li .fa-facebook-f:hover{
+    color: var(--facebook-blue);
+    /* color: white; */
+}
+footer .social-footer li .fa-google-plus-g:hover{
+    color: var(--google-red);
+    /* color: white; */
+}
+footer .social-footer li .fa-linkedin-in:hover{
+    color: var(--linkedIn-blue);
+    /* color: white; */
+}
+footer .social-footer li .fa-twitter:hover{
+    color: var(--twitter-blue);
+    /* color: white; */
+}
