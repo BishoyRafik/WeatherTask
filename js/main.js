@@ -15,7 +15,7 @@ async function getWeather() {
     request = await request.json();
     forecast = request;
     Fday = request.forecast.forecastday;
-    for (let i = 1; i < Fday.length; i++) {
+    for (let i = 0; i < Fday.length; i++) {
         Days.push(Fday[i]);
     }
     console.log(forecast);
@@ -66,7 +66,7 @@ function displayResult() {
         </div>
     </div>
     </div>`;
-    for (let i = 0; i < Days.length; i++) {
+    for (let i = 1; i < Days.length; i++) {
         container += `
         <div class="col-lg-4 col-md-6">
         <div class="card">
