@@ -7,7 +7,6 @@ var forecast;
 var Fday;
 var Days = [];
 var SerLocation;
-
 async function getWeather() {
     var request = await fetch(
         `https://api.weatherapi.com/v1/forecast.json?key=5d7648e60fcf453abdb225647231008&q=auto:ip&days=3`
@@ -15,9 +14,7 @@ async function getWeather() {
     request = await request.json();
     forecast = request;
     Fday = request.forecast.forecastday;
-    for (let i = 0; i < Fday.length; i++) {
-        Days.push(Fday[i]);
-    }
+    Days = Fday;
     console.log(forecast);
     console.log("days", Days);
     displayResult();
@@ -33,10 +30,9 @@ async function searchLoc(){
     request = await request.json();
     forecast = request;
     Fday = request.forecast.forecastday;
-    for (let i = 0; i < Fday.length; i++) {
-        Days.push(Fday[i]);
-    }
+    Days = Fday;
     console.log(SerLocation);
+    console.log(Days);
     displayResult();
 }
 function displayResult() {
@@ -112,7 +108,13 @@ function displayResult() {
     }
     document.getElementById("forecasting").innerHTML = container;
 }
-function clear(){
+function clearData(){
     search.value = '';
+    getWeather();
 }
+search.addEventListener('keyup', function(){
+    if (search.value == ''){
+        getWeather();
+    }
+})
 getWeather();
